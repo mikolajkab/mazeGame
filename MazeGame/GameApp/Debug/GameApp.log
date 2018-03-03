@@ -1,31 +1,65 @@
 ﻿  main.cpp
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\main.cpp : fatal error C1041: cannot open program database 'C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\GameApp\Debug\vc140.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C2146: syntax error: missing ';' before identifier 'mazeMap2'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2143: syntax error: missing ';' before '{'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2447: '{': missing function header (old-style formal list?)
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C3646: 'getWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2059: syntax error: '('
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2238: unexpected token(s) preceding ';'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(11): error C2061: syntax error: identifier 'SWall'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C3646: 'mWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Window.cpp
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\window.cpp : fatal error C1041: cannot open program database 'C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\GameApp\Debug\vc140.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
-  TileMap.cpp
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): warning C4346: 'rowVector2': dependent name is not a type
-  c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): note: prefix with 'typename' to indicate a type
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): error C2061: syntax error: identifier 'rowVector2'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2065: 'U': undeclared identifier
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2923: 'sf::Vector2': 'U' is not a valid template type argument for parameter 'T'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(50): error C2061: syntax error: identifier 'T'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2143: syntax error: missing ';' before '{'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2447: '{': missing function header (old-style formal list?)
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(48): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(50): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(64): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(65): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(66): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(67): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C2146: syntax error: missing ';' before identifier 'mazeMap2'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2143: syntax error: missing ';' before '{'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2447: '{': missing function header (old-style formal list?)
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C3646: 'getWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2059: syntax error: '('
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2238: unexpected token(s) preceding ';'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(11): error C2061: syntax error: identifier 'SWall'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C3646: 'mWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  Maze.cpp
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C2146: syntax error: missing ';' before identifier 'mazeMap2'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2143: syntax error: missing ';' before '{'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2447: '{': missing function header (old-style formal list?)
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C3646: 'getWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2059: syntax error: '('
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2238: unexpected token(s) preceding ';'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(11): error C2061: syntax error: identifier 'SWall'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C3646: 'mWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(8): error C2065: 'mazeMap2': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(8): error C2660: 'CTile::setWall': function does not take 1 arguments
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(53): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(53): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(54): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(54): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(55): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(55): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(56): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(56): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(65): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(66): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(69): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(69): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(70): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(70): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(71): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(71): error C2065: 'sTileHeight': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(72): error C2065: 'sTileWidth': undeclared identifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(72): error C2065: 'sTileHeight': undeclared identifier
   Game.cpp
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): warning C4346: 'rowVector2': dependent name is not a type
-  c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): note: prefix with 'typename' to indicate a type
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): error C2061: syntax error: identifier 'rowVector2'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2065: 'U': undeclared identifier
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2923: 'sf::Vector2': 'U' is not a valid template type argument for parameter 'T'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(50): error C2061: syntax error: identifier 'T'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2143: syntax error: missing ';' before '{'
-c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2447: '{': missing function header (old-style formal list?)
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(24): error C2146: syntax error: missing ';' before identifier 'mazeMap2'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2143: syntax error: missing ';' before '{'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mazemap.h(25): error C2447: '{': missing function header (old-style formal list?)
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C3646: 'getWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2059: syntax error: '('
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(10): error C2238: unexpected token(s) preceding ';'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(11): error C2061: syntax error: identifier 'SWall'
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C3646: 'mWall': unknown override specifier
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tile.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Generating Code...

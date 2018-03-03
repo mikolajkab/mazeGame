@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "TileMap.h"
+#include "Maze.h"
 
 
 class CWindow
@@ -19,6 +19,6 @@ public:
 private:
   sf::RenderWindow mWindow;
   sf::Clock mClock;
-  CTileMap map;
+  CMaze maze;
 };
 

@@ -120,13 +120,16 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="Maze.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="MazeMap.h" />
-    <ClInclude Include="TileMap.h" />
+    <ClInclude Include="Maze.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

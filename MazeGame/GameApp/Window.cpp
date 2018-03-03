@@ -2,7 +2,7 @@
 
 CWindow::CWindow(int width, int height, std::string name)
   : mWindow(sf::VideoMode(width, height), name, sf::Style::Close)
-  , map("tileset.png")
+  , maze("tileset.png")
 {
 }
 
@@ -40,6 +40,6 @@ void CWindow::clear()
 }
 void CWindow::display()
 {
-  mWindow.draw(map);
+  mWindow.draw(maze);
   mWindow.display();
 }
