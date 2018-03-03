@@ -1,9 +1,9 @@
-#include "Window.h"
+#include "Game.h"
 
 int main()
 {
-	CWindow window;
-	window.mainLoop();	
+  CGame game;
+  game.runMainLoop();
 
-	return 0;
+  return 0;
 }

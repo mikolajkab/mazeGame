@@ -1,17 +1,24 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 
-class CWindow 
+#include "TileMap.h"
+
+
+class CWindow
 {
 public:
-	CWindow();
-	virtual ~CWindow();
-	void mainLoop();
+  CWindow(int length, int width, std::string name);
+  ~CWindow();
+
+  void pollEvents();
+  bool isOpen() const;
+  void display();
+  void clear();
 
 private:
-	sf::RenderWindow mWindow;
-	sf::Clock mClock;
-	sf::CircleShape mShape;
-
+  sf::RenderWindow mWindow;
+  sf::Clock mClock;
+  CTileMap map;
 };
 
