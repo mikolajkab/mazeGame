@@ -1,3 +1,31 @@
-﻿  Window.cpp
-  GameApp.vcxproj -> C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\Debug\GameApp.exe
-  GameApp.vcxproj -> C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\Debug\GameApp.pdb (Partial PDB)
+﻿  main.cpp
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\main.cpp : fatal error C1041: cannot open program database 'C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\GameApp\Debug\vc140.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  Window.cpp
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\window.cpp : fatal error C1041: cannot open program database 'C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\GameApp\Debug\vc140.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  TileMap.cpp
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): warning C4346: 'rowVector2': dependent name is not a type
+  c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): note: prefix with 'typename' to indicate a type
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): error C2061: syntax error: identifier 'rowVector2'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2065: 'U': undeclared identifier
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2923: 'sf::Vector2': 'U' is not a valid template type argument for parameter 'T'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(50): error C2061: syntax error: identifier 'T'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2143: syntax error: missing ';' before '{'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2447: '{': missing function header (old-style formal list?)
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(48): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(50): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(64): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(65): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(66): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\tilemap.cpp(67): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Game.cpp
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): warning C4346: 'rowVector2': dependent name is not a type
+  c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): note: prefix with 'typename' to indicate a type
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(38): error C2061: syntax error: identifier 'rowVector2'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2065: 'U': undeclared identifier
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(49): error C2923: 'sf::Vector2': 'U' is not a valid template type argument for parameter 'T'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(50): error C2061: syntax error: identifier 'T'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2143: syntax error: missing ';' before '{'
+c:\home\okno\zcpp\dev\lib\sfml-2.4.2-windows-vc14-32-bit\sfml-2.4.2\include\sfml\system\vector2.inl(52): error C2447: '{': missing function header (old-style formal list?)
+  Generating Code...
