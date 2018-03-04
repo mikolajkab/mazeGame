@@ -19,6 +19,6 @@ public:
 private:
   sf::RenderWindow mWindow;
   sf::Clock mClock;
-  CMaze maze;
+  CMaze mMaze;
 };
 

@@ -126,7 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Wall.h" />
+    <ClInclude Include="WallPosition.h" />
     <ClInclude Include="MazeMap.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Tile.h" />

@@ -1,19 +1,19 @@
 #pragma once
 
-#include "Wall.h"
+#include "WallPosition.h"
 
 class CTile
 {
 public:
   CTile();
   ~CTile();
-  SWall getWall(void);
-  void setWall(SWall);
+  SWallPosition getWall(void);
+  void setWall(SWallPosition);
 
-  static constexpr int sTileWidth = 64;
-  static constexpr int sTileHeight = 64;
+  static constexpr int sWidth = 64;
+  static constexpr int sHeight = 64;
 
 private:
-  SWall mWall;
+  SWallPosition mWall;
 };
 

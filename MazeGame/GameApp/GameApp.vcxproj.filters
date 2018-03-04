@@ -47,7 +47,7 @@
     <ClInclude Include="Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wall.h">
+    <ClInclude Include="WallPosition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

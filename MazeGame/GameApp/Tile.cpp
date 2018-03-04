@@ -9,12 +9,12 @@ CTile::~CTile()
 {
 }
 
-SWall CTile::getWall()
+SWallPosition CTile::getWall()
 {
   return mWall;
 }
 
-void CTile::setWall(SWall wall)
+void CTile::setWall(SWallPosition wall)
 {
   mWall = wall;
 }
