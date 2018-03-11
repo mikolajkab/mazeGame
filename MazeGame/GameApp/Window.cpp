@@ -34,7 +34,7 @@ void CWindow::pollEvents()
       break;
     }
   }
-  //sf::Time elapsed = mClock.restart();
+  sf::Time elapsed = mClock.restart();
 }
 
 void CWindow::clear()

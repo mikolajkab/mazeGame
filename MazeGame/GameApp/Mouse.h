@@ -33,5 +33,6 @@ private:
 
   void setSpritePosition(void);
 
+  UWallPosition mLastStep;
 };
 

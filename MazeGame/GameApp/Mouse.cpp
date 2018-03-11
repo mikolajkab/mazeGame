@@ -36,24 +36,28 @@ void CMouse::draw(sf::RenderTarget& target, sf::RenderStates states) const
 void CMouse::goNorth()
 {
   mPosition.row -= 1;
+  mLastStep.value = 1;
   setSpritePosition();
 }
 
 void CMouse::goSouth()
 {
   mPosition.row += 1;
+  mLastStep.value = 0b10;
   setSpritePosition();
 }
 
 void CMouse::goEast()
 {
-  mPosition.col -= 1;
+  mPosition.col += 1;
+  mLastStep.value = 0b100;
   setSpritePosition();
 }
 
 void CMouse::goWest()
 {
-  mPosition.col += 1;
+  mPosition.col -= 1;
+  mLastStep.value = 0b1000;
   setSpritePosition();
 }
 
@@ -64,26 +68,88 @@ void CMouse::checkWalls()
 
 void CMouse::setSpritePosition(void)
 {
-  mSprite.setPosition(sf::Vector2f(mPosition.row*CTile::sHeight, mPosition.col*CTile::sWidth));
+  mSprite.setPosition(sf::Vector2f(mPosition.col*CTile::sWidth, mPosition.row*CTile::sHeight));
 }
 
 void CMouse::move(void)
 {
   checkWalls();
-  if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.N == 0)
+  switch (mLastStep.value)
   {
-    goNorth();
-  }
-  else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.S == 0)
-  {
-    goSouth();
-  }
-  else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.E == 0)
-  {
-    goEast();
-  }
-  else
-  {
-    goWest();
+  case 1:
+    if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.E == 0)
+    {
+      goEast();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.N == 0)
+    {
+      goNorth();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.W == 0)
+    {
+      goWest();
+    }
+    else
+    {
+      goSouth();
+    }
+    break;
+  case 2:
+    if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.W == 0)
+    {
+      goWest();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.S == 0)
+    {
+      goSouth();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.E == 0)
+    {
+      goEast();
+    }
+    else
+    {
+      goNorth();
+    }
+    break;
+  case 4:
+    if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.S == 0)
+    {
+      goSouth();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.E == 0)
+    {
+      goEast();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.N == 0)
+    {
+      goNorth();
+    }
+    else
+    {
+      goWest();
+    }
+    break;
+  case 8:
+    if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.N == 0)
+    {
+      goNorth();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.W == 0)
+    {
+      goWest();
+    }
+    else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.S == 0)
+    {
+      goSouth();
+    }
+    else
+    {
+      goEast();
+    }
+    break;
+  default:
+    mLastStep.value = 1;
+    break;
   }
 }

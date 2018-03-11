@@ -1,13 +1,4 @@
 ﻿  Mouse.cpp
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mouse.cpp(67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  MazeMap.cpp
-  Generating Code...
-  Compiling...
-  main.cpp
-  Window.cpp
-  Game.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Maze.cpp
+c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\mouse.cpp(71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   GameApp.vcxproj -> C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\Debug\GameApp.exe
   GameApp.vcxproj -> C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\Debug\GameApp.pdb (Partial PDB)

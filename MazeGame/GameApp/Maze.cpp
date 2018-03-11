@@ -13,8 +13,8 @@ CMaze::CMaze(const std::string& fielName, CMazeMap& mazeMap)
   mVertexArray.resize(mazeMap.getWidth() * mazeMap.getHeight() * sNumVerticesInQuad);
 
   // populate the vertex array, with one quad per tile
-  for (unsigned int row = 0; row < mazeMap.getWidth(); ++row)
-    for (unsigned int col = 0; col < mazeMap.getHeight(); ++col)
+  for (unsigned int row = 0; row < mazeMap.getHeight(); ++row)
+    for (unsigned int col = 0; col < mazeMap.getWidth(); ++col)
     {
       // get a pointer to the current tile's quad
       sf::Vertex* quad = &mVertexArray[(row + col * mazeMap.getWidth()) * sNumVerticesInQuad];
