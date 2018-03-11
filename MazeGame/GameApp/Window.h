@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Maze.h"
+#include "Mouse.h"
 
 
 class CWindow
@@ -15,10 +16,12 @@ public:
   bool isOpen() const;
   void display();
   void clear();
+  void calculatePosition();
 
 private:
   sf::RenderWindow mWindow;
   sf::Clock mClock;
   CMaze mMaze;
+  CMouse mMouse;
 };
 

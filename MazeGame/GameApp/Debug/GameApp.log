@@ -1,17 +1,1 @@
-﻿  Maze.cpp
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\home\okno\zcpp\dev\visual-studio-c++\mazegame\mazegame\gameapp\maze.cpp(76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Compiling...
-  main.cpp
-  Window.cpp
-  Game.cpp
-  Generating Code...
-  GameApp.vcxproj -> C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\Debug\GameApp.exe
-  GameApp.vcxproj -> C:\Home\OKNO\ZCPP\dev\visual-studio-c++\mazegame\MazeGame\Debug\GameApp.pdb (Partial PDB)
+﻿

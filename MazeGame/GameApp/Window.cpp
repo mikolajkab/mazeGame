@@ -2,7 +2,8 @@
 
 CWindow::CWindow(int width, int height, std::string name)
   : mWindow(sf::VideoMode(width, height), name, sf::Style::Close)
-  , mMaze("tileset.png")
+  , mMaze("tileset2.png")
+  , mMouse("mouse.png")
 {
 }
 
@@ -38,8 +39,15 @@ void CWindow::clear()
 {
   mWindow.clear(sf::Color::Black);
 }
+
 void CWindow::display()
 {
   mWindow.draw(mMaze);
+  mWindow.draw(mMouse);
   mWindow.display();
+}
+
+void CWindow::calculatePosition()
+{
+
 }

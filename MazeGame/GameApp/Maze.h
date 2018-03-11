@@ -9,7 +9,7 @@ using std::array;
 class CMaze : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMaze(const std::string& tileset);
+  CMaze(const std::string& fielName);
   ~CMaze();
 
 private:
@@ -17,12 +17,13 @@ private:
   void setQuadPositions(sf::Vertex* quad, int col, int row);
   void setQuadCoords(sf::Vertex* quad, int col, int row);
 
-  const SWallPosition (*mMazeMap)[4] ;
+  const UWallPosition (*mMazeMap)[4] ;
 
   sf::VertexArray mVertexArray;
   sf::Texture mTexture;
 
   static constexpr int sWidth = 4;
   static constexpr int sHeight = 4;
+  static constexpr int sNumVerticesInQuad = 4;
 };
 
