@@ -20,10 +20,10 @@ public:
 
 private:
   sf::RenderWindow mWindow;
-  sf::Clock mClock;
   CMazeMap mMazeMap;
 
   CMaze mMaze;
   CMouse mMouse;
+
 };
 

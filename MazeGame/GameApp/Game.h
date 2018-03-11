@@ -13,5 +13,7 @@ public:
 
 private:
   CWindow mWindow;
+  sf::Clock mClock;
+  sf::Time time;
 };
 
