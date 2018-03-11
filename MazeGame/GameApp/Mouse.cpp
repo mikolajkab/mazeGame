@@ -1,10 +1,10 @@
 #include "Mouse.h"
 
 
-CMouse::CMouse(const std::string& fielName, const UWallPosition(*mazeMap)[4])
+CMouse::CMouse(const std::string& fielName, CMazeMap& mazeMap)
 {
 
-  mActualMazeMap = mazeMap;
+  //mActualMazeMap = mazeMap.map;
 
   if (!mTexture.loadFromFile(fielName))
   {
@@ -14,6 +14,10 @@ CMouse::CMouse(const std::string& fielName, const UWallPosition(*mazeMap)[4])
   mSprite.setTexture(mTexture);
   mSprite.setPosition(sf::Vector2f(7, 7 + 192));
   mSprite.setColor(sf::Color(155, 0, 128));
+
+  mPosition.row = 0;
+  mPosition.col = 0;
+
 }
 
 CMouse::~CMouse()

@@ -3,11 +3,12 @@
 #include <SFML/Graphics.hpp>
 
 #include "Tile.h"
+#include "MazeMap.h"
 
 class CMouse : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMouse(const std::string& fielName, const UWallPosition(*mazeMap)[4]);
+  CMouse(const std::string& fielName, CMazeMap& mazeMap);
   virtual ~CMouse();
 
 private:
@@ -23,10 +24,9 @@ private:
   struct SPosition
   {
     int row;
-    int coulmn;
+    int col;
   } mPosition;
 
-  const UWallPosition(*mActualMazeMap)[4];
   UWallPosition mDetectedMazeMap[][4];
 };
 

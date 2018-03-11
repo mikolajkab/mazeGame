@@ -3,8 +3,9 @@
 
 CWindow::CWindow(int width, int height, std::string name)
   : mWindow(sf::VideoMode(width, height), name, sf::Style::Close)
-  , mMaze("tileset2.png", mazeMap3)
-  , mMouse("mouse.png", mazeMap3)
+  , mMazeMap()
+  , mMaze("tileset2.png", mMazeMap)
+  , mMouse("mouse.png", mMazeMap)
 {
 }
 

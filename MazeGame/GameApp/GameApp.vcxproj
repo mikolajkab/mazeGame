@@ -121,15 +121,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Maze.cpp" />
+    <ClCompile Include="MazeMap.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="MazeMap.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="WallPosition.h" />
-    <ClInclude Include="MazeMap.h" />
+    <ClInclude Include="MazeMap2.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Window.h" />

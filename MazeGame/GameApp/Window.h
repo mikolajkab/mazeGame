@@ -4,6 +4,7 @@
 
 #include "Maze.h"
 #include "Mouse.h"
+#include "MazeMap.h"
 
 class CWindow
 {
@@ -20,6 +21,8 @@ public:
 private:
   sf::RenderWindow mWindow;
   sf::Clock mClock;
+  CMazeMap mMazeMap;
+
   CMaze mMaze;
   CMouse mMouse;
 };
