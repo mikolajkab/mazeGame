@@ -10,6 +10,7 @@ class CMouse : public sf::Drawable, public sf::Transformable
 public:
   CMouse(const std::string& fielName, CMazeMap& mazeMap);
   virtual ~CMouse();
+  void move();
 
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
@@ -17,7 +18,7 @@ private:
   void goSouth();
   void goEast();
   void goWest();
-  void checkWall();
+  void checkWalls();
   sf::Texture mTexture;
   sf::Sprite mSprite;
 
@@ -27,6 +28,10 @@ private:
     int col;
   } mPosition;
 
-  UWallPosition mDetectedMazeMap[][4];
+  CMazeMap& mActualMazeMap;
+  UWallPosition mDetectedMazeMap[4][4];
+
+  void setSpritePosition(void);
+
 };
 

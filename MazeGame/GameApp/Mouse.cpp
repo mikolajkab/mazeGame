@@ -2,22 +2,19 @@
 
 
 CMouse::CMouse(const std::string& fielName, CMazeMap& mazeMap)
+  : mActualMazeMap(mazeMap)
 {
-
-  //mActualMazeMap = mazeMap.map;
-
   if (!mTexture.loadFromFile(fielName))
   {
     // TODO: trigger excecption
   }
 
   mSprite.setTexture(mTexture);
-  mSprite.setPosition(sf::Vector2f(7, 7 + 192));
   mSprite.setColor(sf::Color(155, 0, 128));
-
+  mSprite.setOrigin(sf::Vector2f(-7, -7));
   mPosition.row = 0;
   mPosition.col = 0;
-
+  setSpritePosition();
 }
 
 CMouse::~CMouse()
@@ -38,25 +35,55 @@ void CMouse::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void CMouse::goNorth()
 {
-  mSprite.move(0, CTile::sHeight);
+  mPosition.row -= 1;
+  setSpritePosition();
 }
 
 void CMouse::goSouth()
 {
-  mSprite.move(0, -CTile::sHeight);
+  mPosition.row += 1;
+  setSpritePosition();
 }
 
 void CMouse::goEast()
 {
-  mSprite.move(-CTile::sHeight, 0);
+  mPosition.col -= 1;
+  setSpritePosition();
 }
 
 void CMouse::goWest()
 {
-  mSprite.move(CTile::sHeight, 0);
+  mPosition.col += 1;
+  setSpritePosition();
 }
 
-void CMouse::checkWall()
+void CMouse::checkWalls()
 {
+  mDetectedMazeMap[mPosition.row][mPosition.col] = mActualMazeMap.getWallPosition(mPosition.row,mPosition.col);
+}
 
+void CMouse::setSpritePosition(void)
+{
+  mSprite.setPosition(sf::Vector2f(mPosition.row*CTile::sHeight, mPosition.col*CTile::sWidth));
+}
+
+void CMouse::move(void)
+{
+  checkWalls();
+  if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.N == 0)
+  {
+    goNorth();
+  }
+  else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.S == 0)
+  {
+    goSouth();
+  }
+  else if (mDetectedMazeMap[mPosition.row][mPosition.col].fields.E == 0)
+  {
+    goEast();
+  }
+  else
+  {
+    goWest();
+  }
 }

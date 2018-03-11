@@ -45,6 +45,7 @@ void CWindow::clear()
 void CWindow::display()
 {
   mWindow.draw(mMaze);
+  mMouse.move();
   mWindow.draw(mMouse);
   mWindow.display();
 }
