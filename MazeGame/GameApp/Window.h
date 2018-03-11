@@ -5,7 +5,6 @@
 #include "Maze.h"
 #include "Mouse.h"
 
-
 class CWindow
 {
 public:

@@ -1,8 +1,10 @@
 #include "Mouse.h"
 
 
-CMouse::CMouse(const std::string& fielName)
+CMouse::CMouse(const std::string& fielName, const UWallPosition(*mazeMap)[4])
 {
+
+  mActualMazeMap = mazeMap;
 
   if (!mTexture.loadFromFile(fielName))
   {

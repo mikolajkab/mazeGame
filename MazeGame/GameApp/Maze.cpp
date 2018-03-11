@@ -1,9 +1,8 @@
 #include "Maze.h"
-#include "MazeMap.h"
 
-CMaze::CMaze(const std::string& fielName)
+CMaze::CMaze(const std::string& fielName, const UWallPosition (*mazeMap)[4])
 {
-  mMazeMap = mazeMap3;
+  mMazeMap = mazeMap;
 
   // load the tileset texture
   if (!mTexture.loadFromFile(fielName))

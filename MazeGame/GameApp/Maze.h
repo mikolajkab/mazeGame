@@ -9,7 +9,7 @@ using std::array;
 class CMaze : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMaze(const std::string& fielName);
+  CMaze(const std::string& fielName, const UWallPosition (*mazeMap)[4]);
   ~CMaze();
 
 private:

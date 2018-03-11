@@ -7,7 +7,7 @@
 class CMouse : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMouse(const std::string& fielName);
+  CMouse(const std::string& fielName, const UWallPosition(*mazeMap)[4]);
   virtual ~CMouse();
 
 private:
@@ -19,6 +19,12 @@ private:
   void checkWall();
   sf::Texture mTexture;
   sf::Sprite mSprite;
+
+  struct SPosition
+  {
+    int row;
+    int coulmn;
+  } mPosition;
 
   const UWallPosition(*mActualMazeMap)[4];
   UWallPosition mDetectedMazeMap[][4];
