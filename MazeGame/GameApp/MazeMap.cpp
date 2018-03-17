@@ -26,7 +26,7 @@ size_t CMazeMap::getHeight()
   return sHeight;
 }
 
-UWallPosition CMazeMap::getWallPosition(int row, int col)
+UDirections CMazeMap::getWallPosition(int row, int col)
 {
   return map[row][col];
 }

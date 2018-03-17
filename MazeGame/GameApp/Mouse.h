@@ -10,7 +10,8 @@ class CMouse : public sf::Drawable, public sf::Transformable
 public:
   CMouse(const std::string& fielName, CMazeMap& mazeMap);
   virtual ~CMouse();
-  void move();
+  void goWallFollower();
+  void goBruteForce();
 
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
@@ -28,11 +29,23 @@ private:
     int col;
   } mPosition;
 
-  CMazeMap& mActualMazeMap;
-  UWallPosition mDetectedMazeMap[4][4];
+  struct STile
+  {
+    UDirections wallPosition;
+    bool visited;
+  };
 
-  void setSpritePosition(void);
+  static const SPosition stopPosition;
 
-  UWallPosition mLastStep;
+  CMazeMap* mActualMazeMap;
+  STile mDetectedMazeMap[4][4];
+
+
+  bool visited[3][3];
+
+  void setSpritePosition(float angle);
+
+  UDirections mLastStep;
+
 };
 

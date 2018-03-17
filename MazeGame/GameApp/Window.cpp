@@ -44,7 +44,7 @@ void CWindow::clear()
 void CWindow::display()
 {
   mRenderWindow.draw(mMaze);
-  mMouse.move();
+  mMouse.goWallFollower();
   mRenderWindow.draw(mMouse);
   mRenderWindow.display();
 }

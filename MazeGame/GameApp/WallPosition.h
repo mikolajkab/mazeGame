@@ -3,7 +3,7 @@
 
 using std::uint8_t;
 
-union UWallPosition
+union UDirections
 {
   uint8_t value;
   struct SFields

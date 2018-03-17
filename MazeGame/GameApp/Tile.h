@@ -7,13 +7,13 @@ class CTile
 public:
   CTile();
   ~CTile();
-  UWallPosition getWall(void);
-  void setWall(UWallPosition);
+  UDirections getWall(void);
+  void setWall(UDirections);
 
   static constexpr int sWidth = 64;
   static constexpr int sHeight = 64;
 
 private:
-  UWallPosition mWall;
+  UDirections mWall;
 };
 
