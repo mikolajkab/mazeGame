@@ -10,10 +10,12 @@ public:
   virtual ~CGame();
   void runMainLoop();
 
-
 private:
   CWindow mWindow;
   sf::Clock mClock;
   sf::Time time;
+
+  static const int mWindowHeight = 1024;
+  static const int mWindowWidth = 1024;
 };
 

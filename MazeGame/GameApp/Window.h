@@ -16,10 +16,9 @@ public:
   bool isOpen() const;
   void display();
   void clear();
-  void calculatePosition();
 
 private:
-  sf::RenderWindow mWindow;
+  sf::RenderWindow mRenderWindow;
   CMazeMap mMazeMap;
 
   CMaze mMaze;

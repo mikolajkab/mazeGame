@@ -1,9 +1,8 @@
 #include "Game.h"
 
 CGame::CGame()
-  : mWindow(1024, 1024, "MicroMouse")
+  : mWindow(mWindowHeight, mWindowWidth, "MicroMouse")
   , time(sf::milliseconds(200))
-
 {
 }
 
@@ -13,7 +12,6 @@ CGame::~CGame()
 
 void CGame::runMainLoop()
 {
-
   while (mWindow.isOpen())
   {
     if (mClock.getElapsedTime() > time)
