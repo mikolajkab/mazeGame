@@ -19,7 +19,10 @@ private:
   void goSouth();
   void goEast();
   void goWest();
+  void goInDirection(UDirections direction);
   void checkWalls();
+  bool checkGoal();
+  void setFirstEntranceDirection(int row, int col, UDirections direction);
   sf::Texture mTexture;
   sf::Sprite mSprite;
 
@@ -32,20 +35,21 @@ private:
   struct STile
   {
     UDirections wallPosition;
+    UDirections firstEntranceDirection;
     bool visited;
   };
-
-  static const SPosition stopPosition;
-
-  CMazeMap* mActualMazeMap;
   STile mDetectedMazeMap[4][4];
-
-
-  bool visited[3][3];
-
-  void setSpritePosition(float angle);
+  CMazeMap* mActualMazeMap;
+  static const SPosition goalPosition;
 
   UDirections mLastStep;
+
+  void setVisited();
+  UDirections generateDirection(UDirections possibleDirections);
+  UDirections getPossibleDirections();
+
+
+  void setSpritePosition(float angle);
 
 };
 
