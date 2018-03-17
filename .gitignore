@@ -1,4 +1,8 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
 .vs
 MazeGame.VC.opendb
-MazeGame/GameApp/Debug/
+/MazeGame/GameApp/Debug
+/Debug
+/MazeGame/*.sdf
+/MazeGame/x64
+/MazeGame/Debug

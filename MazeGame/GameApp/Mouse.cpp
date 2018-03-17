@@ -23,41 +23,40 @@ CMouse::~CMouse()
 
 void CMouse::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  // apply the transform
   states.transform *= getTransform();
-
-  // apply the tileset texture
   states.texture = &mTexture;
-
-  // draw the vertex array
   target.draw(mSprite, states);
 }
 
 void CMouse::goNorth()
 {
   mPosition.row -= 1;
-  mLastStep.value = 1;
+  mLastStep.value = 0;
+  mLastStep.fields.N = 1;
   setSpritePosition();
 }
 
 void CMouse::goSouth()
 {
   mPosition.row += 1;
-  mLastStep.value = 0b10;
+  mLastStep.value = 0;
+  mLastStep.fields.S = 1;
   setSpritePosition();
 }
 
 void CMouse::goEast()
 {
   mPosition.col += 1;
-  mLastStep.value = 0b100;
+  mLastStep.value = 0;
+  mLastStep.fields.E = 1;
   setSpritePosition();
 }
 
 void CMouse::goWest()
 {
   mPosition.col -= 1;
-  mLastStep.value = 0b1000;
+  mLastStep.value = 0;
+  mLastStep.fields.W = 1;
   setSpritePosition();
 }
 

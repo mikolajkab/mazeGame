@@ -2,7 +2,6 @@
 
 CMaze::CMaze(const std::string& fielName, CMazeMap& mazeMap)
 {
-  // load the tileset texture
   if (!mTexture.loadFromFile(fielName))
   {
     // TODO: trigger exception
@@ -32,13 +31,8 @@ CMaze::~CMaze()
 
 void CMaze::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-  // apply the transform
   states.transform *= getTransform();
-
-  // apply the tileset texture
   states.texture = &mTexture;
-
-  // draw the vertex array
   target.draw(mVertexArray, states);
 }
 
