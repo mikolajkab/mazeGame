@@ -37,7 +37,7 @@ void CMouse::goNorth()
   mLastStep.fields.N = 1;
   UDirections direction{};
   direction.fields.S = 1;
-  setFirstEntranceDirection(mPosition.row, mPosition.row, direction);
+  setFirstEntranceDirection(mPosition.row, mPosition.col, direction);
   setSpritePosition(0);
 }
 
@@ -48,7 +48,7 @@ void CMouse::goSouth()
   mLastStep.fields.S = 1;
   UDirections direction{};
   direction.fields.N = 1;
-  setFirstEntranceDirection(mPosition.row, mPosition.row, direction);
+  setFirstEntranceDirection(mPosition.row, mPosition.col, direction);
   setSpritePosition(0);
 }
 
@@ -59,7 +59,7 @@ void CMouse::goEast()
   mLastStep.fields.E = 1;
   UDirections direction{};
   direction.fields.W = 1;
-  setFirstEntranceDirection(mPosition.row, mPosition.row, direction);
+  setFirstEntranceDirection(mPosition.row, mPosition.col, direction);
   setSpritePosition(0);
 }
 
@@ -70,7 +70,7 @@ void CMouse::goWest()
   mLastStep.fields.W = 1;
   UDirections direction{};
   direction.fields.E = 1;
-  setFirstEntranceDirection(mPosition.row, mPosition.row, direction);
+  setFirstEntranceDirection(mPosition.row, mPosition.col, direction);
   setSpritePosition(0);
 }
 
@@ -85,8 +85,7 @@ void CMouse::setFirstEntranceDirection(int row, int col, UDirections direction)
 void CMouse::checkWalls()
 {
   mDetectedMazeMap[mPosition.row][mPosition.col].wallPosition
-    =
-      mActualMazeMap->getWallPosition(mPosition.row, mPosition.col);
+    = mActualMazeMap->getWallPosition(mPosition.row, mPosition.col);
 }
 
 void CMouse::setSpritePosition(float angle)
