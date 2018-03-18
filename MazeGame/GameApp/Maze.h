@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 
 #include "Tile.h"
 #include "MazeMap.h"
@@ -10,7 +11,7 @@ using std::array;
 class CMaze : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMaze(const std::string& fielName, CMazeMap& mazeMap);
+  CMaze(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap);
   ~CMaze();
 
 private:

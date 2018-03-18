@@ -15,3 +15,9 @@ union UDirections
     uint8_t res : 4;
   } fields;
 };
+
+struct SPosition
+{
+  int row;
+  int col;
+};

@@ -1,10 +1,15 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 
 #include "Maze.h"
 #include "Mouse.h"
 #include "MazeMap.h"
+#include "WallPosition.h"
+
+using std::make_shared;
+using std::make_unique;
 
 class CWindow
 {
@@ -19,10 +24,9 @@ public:
 
 private:
   sf::RenderWindow mRenderWindow;
-  CMazeMap mMazeMap;
+  std::shared_ptr<CMazeMap> mMazeMap;
 
-  CMaze mMaze;
-  CMouse mMouse;
-
+  std::unique_ptr<CMaze> mMaze;
+  std::unique_ptr<CMouse> mMouse;
 };
 

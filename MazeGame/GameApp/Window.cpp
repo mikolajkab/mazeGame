@@ -3,10 +3,16 @@
 
 CWindow::CWindow(int width, int height, std::string name)
   : mRenderWindow(sf::VideoMode(width, height), name, sf::Style::Close)
-  , mMazeMap()
-  , mMaze("tileset2.png", mMazeMap)
-  , mMouse("mouse.png", mMazeMap)
+  , mMazeMap(make_shared<CMazeMap>())
+  , mMaze(nullptr)
+  , mMouse(nullptr)
 {
+  mMaze = make_unique<CMaze>("tileset2.png", mMazeMap);
+
+  SPosition initialPosition;
+  initialPosition.col = 0;
+  initialPosition.row = 0;
+  mMouse = make_unique<CMouse>("mouse.png", mMazeMap, initialPosition);
 }
 
 CWindow::~CWindow()
@@ -25,7 +31,6 @@ void CWindow::pollEvents()
   {
     switch (event.type)
     {
-    // window closed
     case sf::Event::Closed:
       mRenderWindow.close();
       break;
@@ -43,9 +48,14 @@ void CWindow::clear()
 
 void CWindow::display()
 {
-  mRenderWindow.draw(mMaze);
-  //mMouse.goWallFollower();
-  mMouse.goBruteForce();
-  mRenderWindow.draw(mMouse);
+  if (mMaze != nullptr)
+  {
+    mRenderWindow.draw(*mMaze);
+  }
+  if (mMouse != nullptr)
+  {
+    mMouse->go();
+    mRenderWindow.draw(*mMouse);
+  }
   mRenderWindow.display();
 }

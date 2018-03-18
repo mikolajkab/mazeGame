@@ -4,52 +4,25 @@
 
 #include "Tile.h"
 #include "MazeMap.h"
+#include "WallFollower.h"
+#include "BruteForce.h"
 
 class CMouse : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMouse(const std::string& fielName, CMazeMap& mazeMap);
+  CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position);
   virtual ~CMouse();
-  void goWallFollower();
-  void goBruteForce();
+  void go();
 
 private:
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-  void goNorth();
-  void goSouth();
-  void goEast();
-  void goWest();
-  void goInDirection(UDirections direction);
-  void checkWalls();
-  bool checkGoal();
-  void setFirstEntranceDirection(int row, int col, UDirections direction);
+  std::unique_ptr<CStep> mStep;
   sf::Texture mTexture;
   sf::Sprite mSprite;
-
-  struct SPosition
-  {
-    int row;
-    int col;
-  } mPosition;
-
-  struct STile
-  {
-    UDirections wallPosition;
-    UDirections firstEntranceDirection;
-    bool visited;
-  };
-  STile mDetectedMazeMap[4][4];
-  CMazeMap* mActualMazeMap;
+  SPosition mActualPosition;
   static const SPosition goalPosition;
 
-  UDirections mLastStep;
-
-  void setVisited();
-  UDirections generateDirection(UDirections possibleDirections);
-  UDirections getPossibleDirections();
-
-
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
   void setSpritePosition(float angle);
-
+  bool atGoal();
 };
 

@@ -1,6 +1,6 @@
 #include "Maze.h"
 
-CMaze::CMaze(const std::string& fielName, CMazeMap& mazeMap)
+CMaze::CMaze(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap)
 {
   if (!mTexture.loadFromFile(fielName))
   {
@@ -9,18 +9,18 @@ CMaze::CMaze(const std::string& fielName, CMazeMap& mazeMap)
 
   // resize the vertex array to fit the level size
   mVertexArray.setPrimitiveType(sf::Quads);
-  mVertexArray.resize(mazeMap.getWidth() * mazeMap.getHeight() * sNumVerticesInQuad);
+  mVertexArray.resize(mazeMap->getWidth() * mazeMap->getHeight() * sNumVerticesInQuad);
 
   // populate the vertex array, with one quad per tile
-  for (unsigned int row = 0; row < mazeMap.getHeight(); ++row)
-    for (unsigned int col = 0; col < mazeMap.getWidth(); ++col)
+  for (unsigned int row = 0; row < mazeMap->getHeight(); ++row)
+    for (unsigned int col = 0; col < mazeMap->getWidth(); ++col)
     {
       // get a pointer to the current tile's quad
-      sf::Vertex* quad = &mVertexArray[(row + col * mazeMap.getWidth()) * sNumVerticesInQuad];
+      sf::Vertex* quad = &mVertexArray[(row + col * mazeMap->getWidth()) * sNumVerticesInQuad];
 
       setQuadPositions(quad, row, col);
 
-      int tileType = mazeMap.map[row][col].value;
+      int tileType = mazeMap->map[row][col].value;
       setQuadCoords(quad, row, col, tileType);
     }
 }
