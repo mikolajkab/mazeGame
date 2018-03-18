@@ -4,7 +4,7 @@ const SPosition CMouse::goalPosition = { 3,3 };
 
 CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position)
   : mActualPosition(position)
-  , mStep(std::make_unique<CWallFollower>(mActualPosition, mazeMap))
+  , mStep(std::make_unique<CBruteForce>(mActualPosition, mazeMap))
 {
   if (!mTexture.loadFromFile(fielName))
   {

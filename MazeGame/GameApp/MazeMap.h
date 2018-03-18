@@ -12,8 +12,8 @@ public:
   size_t getHeight();
   UDirections getWallPosition(int row, int col);
 
-  static constexpr int sWidth = 4;
-  static constexpr int sHeight = 4;
+  static constexpr int sWidth = 8;
+  static constexpr int sHeight = 8;
 
   UDirections map[sHeight][sWidth];
 };

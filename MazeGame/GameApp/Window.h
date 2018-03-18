@@ -6,6 +6,7 @@
 #include "Maze.h"
 #include "Mouse.h"
 #include "MazeMap.h"
+#include "Button.h"
 #include "WallPosition.h"
 
 using std::make_shared;
@@ -28,5 +29,18 @@ private:
 
   std::unique_ptr<CMaze> mMaze;
   std::unique_ptr<CMouse> mMouse;
+
+  CButton mStartButton;
+  CButton mStopButton;
+  CButton mResetButton;
+  CButton mWallFollowerButton;
+  CButton mBruteForceButton;
+
+  bool mRun;
+
+  void handleButtons();
+  void startStopReset();
+  void addMouse();
+  bool isMouseInPosition(int positionX, int positionY, int width, int height);
 };
 

@@ -23,7 +23,7 @@ protected:
     bool visited;
   };
 
-  STile mDetectedMazeMap[4][4];
+  STile mDetectedMazeMap[8][8];
 
   void goNorth();
   void goSouth();
