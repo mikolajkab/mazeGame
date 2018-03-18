@@ -173,7 +173,7 @@ void CMouse::goWallFollower(void)
     }
     break;
   default:
-    mLastStep.value = 1;
+    mLastStep.value = 2;
     break;
   }
 }
