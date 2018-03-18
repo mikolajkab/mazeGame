@@ -16,6 +16,6 @@ private:
   sf::Time time;
 
   static const int mWindowHeight = 1024;
-  static const int mWindowWidth = 1024;
+  static const int mWindowWidth = 1424;
 };
 

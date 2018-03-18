@@ -48,7 +48,7 @@ bool CMouse::atGoal()
 {
   if ((mActualPosition.col == goalPosition.col) && (mActualPosition.row == goalPosition.row))
   {
-    return true;
+    //return true;
   }
   return false;
 }

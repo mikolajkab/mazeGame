@@ -1,7 +1,7 @@
 #include "Game.h"
 
 CGame::CGame()
-  : mWindow(mWindowHeight, mWindowWidth, "MicroMouse")
+  : mWindow(mWindowWidth, mWindowHeight, "MicroMouse")
   , time(sf::milliseconds(200))
 {
 }

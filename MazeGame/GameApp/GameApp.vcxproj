@@ -137,7 +137,6 @@
     <ClInclude Include="Step.h" />
     <ClInclude Include="WallFollower.h" />
     <ClInclude Include="WallPosition.h" />
-    <ClInclude Include="MazeMap2.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Window.h" />
