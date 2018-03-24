@@ -6,13 +6,13 @@ CWindow::CWindow(int width, int height, std::string name)
   , mMazeMap(make_shared<CMazeMap>())
   , mMaze(make_unique<CMaze>("tileset2.png", mMazeMap))
   , mMouse(nullptr)
-  , mStartButton(make_unique<CButton>("start.png", 1150, 50))
-  , mStopButton(make_unique<CButton>("stop.png", 1150, 200))
-  , mResetButton(make_unique<CButton>("reset.png", 1150, 350))
-  , mWallFollowerButton(make_unique<CButton>("wallFollower.png", 1150, 500))
-  , mBruteForceButton(make_unique<CButton>("bruteForce.png", 1150, 650))
   , mRun(false)
 {
+  mButtons.push_back(make_unique<CButton>("start.png", 1150, 50));
+  mButtons.push_back(make_unique<CButton>("stop.png", 1150, 200));
+  mButtons.push_back(make_unique<CButton>("reset.png", 1150, 350));
+  mButtons.push_back(make_unique<CButton>("wallFollower.png", 1150, 500));
+  mButtons.push_back(make_unique<CButton>("bruteForce.png", 1150, 650));
 }
 
 CWindow::~CWindow()
@@ -57,6 +57,7 @@ void CWindow::display()
   {
     mRenderWindow.draw(*mMaze);
   }
+
   if (mMouse != nullptr)
   {
     if (mRun)
@@ -65,11 +66,12 @@ void CWindow::display()
     }
     mRenderWindow.draw(*mMouse);
   }
-  mRenderWindow.draw(*mStartButton);
-  mRenderWindow.draw(*mStopButton);
-  mRenderWindow.draw(*mResetButton);
-  mRenderWindow.draw(*mWallFollowerButton);
-  mRenderWindow.draw(*mBruteForceButton);
+
+  for (const auto& button : mButtons)
+  {
+    mRenderWindow.draw(*button);
+  }
+
   mRenderWindow.display();
 }
 

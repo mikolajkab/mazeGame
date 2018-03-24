@@ -32,11 +32,7 @@ private:
   unique_ptr<CMaze> mMaze;
   unique_ptr<CMouse> mMouse;
 
-  unique_ptr<CButton> mStartButton;
-  unique_ptr<CButton> mStopButton;
-  unique_ptr<CButton> mResetButton;
-  unique_ptr<CButton> mWallFollowerButton;
-  unique_ptr<CButton> mBruteForceButton;
+  std::vector <unique_ptr<CButton>> mButtons;
 
   bool mRun;
 
