@@ -3,15 +3,16 @@
 
 CWindow::CWindow(int width, int height, std::string name)
   : mRenderWindow(sf::VideoMode(width, height), name, sf::Style::Close)
-  , mMazeMap(make_shared<CMazeMap>())
+  , mMazeMap(make_shared<CMazeMap>(1))
   , mMaze(make_unique<CMaze>("tileset2.png", mMazeMap))
   , mRun(false)
 {
-  mButtons.push_back(make_unique<CButton>("start.png", 1150, 50));
-  mButtons.push_back(make_unique<CButton>("stop.png", 1150, 200));
-  mButtons.push_back(make_unique<CButton>("reset.png", 1150, 350));
-  mButtons.push_back(make_unique<CButton>("wallFollower.png", 1150, 500));
-  mButtons.push_back(make_unique<CButton>("bruteForce.png", 1150, 650));
+  mButtons.push_back(make_unique<CButton>("start.png", sButPosX, sButStartPosY));
+  mButtons.push_back(make_unique<CButton>("stop.png", sButPosX, sButStopPosY));
+  mButtons.push_back(make_unique<CButton>("reset.png", sButPosX, sButResetPosY));
+  mButtons.push_back(make_unique<CButton>("wallFollower.png", sButPosX, sButWFPosY));
+  mButtons.push_back(make_unique<CButton>("bruteForce.png", sButPosX, sButBFPosY));
+  mButtons.push_back(make_unique<CButton>("zmianaMapy.png", sButPosX, sButSwitchMapY));
 }
 
 CWindow::~CWindow()
@@ -46,7 +47,7 @@ void CWindow::pollEvents()
 
 void CWindow::clear()
 {
-  mRenderWindow.clear(sf::Color(0, 0, 150, 0));
+  mRenderWindow.clear(sf::Color(0, 0, sColorBlue, 0));
 }
 
 void CWindow::display()
@@ -78,18 +79,19 @@ void CWindow::handleButtons()
 {
   startStopReset();
   addMouse();
+  switchMap();
 }
 
 void CWindow::addMouse()
 {
-  if (isCompMouseInPosition(1150, 500, 150, 150))
+  if (isCompMouseInPosition(sButPosX, sButWFPosY, sButSideLen, sButSideLen))
   {
     SPosition initialPosition;
     initialPosition.col = 0;
     initialPosition.row = 0;
     mMice.push_back(make_unique<CMouse>("mouseWallFollower.png", mMazeMap, initialPosition, CMouse::sAlgNumWallFollower));
   }
-  else if (isCompMouseInPosition(1150, 650, 150, 150))
+  else if (isCompMouseInPosition(sButPosX, sButBFPosY, sButSideLen, sButSideLen))
   {
     SPosition initialPosition;
     initialPosition.col = 0;
@@ -98,17 +100,29 @@ void CWindow::addMouse()
   }
 }
 
+void CWindow::switchMap()
+{
+  if (isCompMouseInPosition(sButPosX, sButSwitchMapY, sButSideLen, sButSideLen))
+  {
+    mMice.clear();
+    mRun = false;
+    mMazeMap->switchMap();
+    mMaze.reset();
+    mMaze = make_unique<CMaze>("tileset2.png", mMazeMap);
+  }
+}
+
 void CWindow::startStopReset()
 {
-  if (isCompMouseInPosition(1150, 50, 150, 150))
+  if (isCompMouseInPosition(sButPosX, sButStartPosY, sButSideLen, sButSideLen))
   {
     mRun = true;
   }
-  else if (isCompMouseInPosition(1150, 200, 150, 150))
+  else if (isCompMouseInPosition(sButPosX, sButStopPosY, sButSideLen, sButSideLen))
   {
     mRun = false;
   }
-  else if (isCompMouseInPosition(1150, 350, 150, 150))
+  else if (isCompMouseInPosition(sButPosX, sButResetPosY, sButSideLen, sButSideLen))
   {
     mMice.clear();
     mRun = false;
@@ -125,3 +139,4 @@ bool CWindow::isCompMouseInPosition(int positionX, int positionY, int width, int
   }
   return false;
 }
+

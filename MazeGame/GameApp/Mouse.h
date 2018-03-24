@@ -15,8 +15,8 @@ public:
   void go();
   void assignStepAlgorithm(int algorithmNumber);
 
-  static constexpr int sAlgNumWallFollower = 1;
-  static constexpr int sAlgNumBruteForce = 2;
+  static constexpr int sAlgNumWallFollower  = 1;
+  static constexpr int sAlgNumBruteForce    = 2;
 
 private:
   std::unique_ptr<CStep> mStep;

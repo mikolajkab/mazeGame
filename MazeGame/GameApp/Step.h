@@ -1,4 +1,6 @@
 #pragma once
+
+#include <array>
 #include <memory>
 
 #include "WallPosition.h"
@@ -23,7 +25,7 @@ protected:
     bool visited;
   };
 
-  STile mDetectedMazeMap[8][8];
+  std::array<std::array<STile, CMazeMap::sWidth>, CMazeMap::sHeight> mDetectedMazeMap;
 
   void goNorth();
   void goSouth();
