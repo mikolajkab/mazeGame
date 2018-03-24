@@ -4,16 +4,15 @@
 CWindow::CWindow(int width, int height, std::string name)
   : mRenderWindow(sf::VideoMode(width, height), name, sf::Style::Close)
   , mMazeMap(make_shared<CMazeMap>())
-  , mMaze(nullptr)
+  , mMaze(make_unique<CMaze>("tileset2.png", mMazeMap))
   , mMouse(nullptr)
-  , mStartButton("start.png", 1150, 50)
-  , mStopButton("stop.png", 1150, 200)
-  , mResetButton("reset.png", 1150, 350)
-  , mWallFollowerButton("wallFollower.png", 1150, 500)
-  , mBruteForceButton("bruteForce.png", 1150, 650)
+  , mStartButton(make_unique<CButton>("start.png", 1150, 50))
+  , mStopButton(make_unique<CButton>("stop.png", 1150, 200))
+  , mResetButton(make_unique<CButton>("reset.png", 1150, 350))
+  , mWallFollowerButton(make_unique<CButton>("wallFollower.png", 1150, 500))
+  , mBruteForceButton(make_unique<CButton>("bruteForce.png", 1150, 650))
   , mRun(false)
 {
-  mMaze = make_unique<CMaze>("tileset2.png", mMazeMap);
 }
 
 CWindow::~CWindow()
@@ -37,9 +36,8 @@ void CWindow::pollEvents()
       break;
 
     case sf::Event::MouseButtonPressed:
-    {
       handleButtons();
-    }
+      break;
 
     default:
       break;
@@ -67,11 +65,11 @@ void CWindow::display()
     }
     mRenderWindow.draw(*mMouse);
   }
-  mRenderWindow.draw(mStartButton);
-  mRenderWindow.draw(mStopButton);
-  mRenderWindow.draw(mResetButton);
-  mRenderWindow.draw(mWallFollowerButton);
-  mRenderWindow.draw(mBruteForceButton);
+  mRenderWindow.draw(*mStartButton);
+  mRenderWindow.draw(*mStopButton);
+  mRenderWindow.draw(*mResetButton);
+  mRenderWindow.draw(*mWallFollowerButton);
+  mRenderWindow.draw(*mBruteForceButton);
   mRenderWindow.display();
 }
 
@@ -83,7 +81,7 @@ void CWindow::handleButtons()
 
 void CWindow::addMouse()
 {
-  if ((mMouse == nullptr) && (isMouseInPosition(1150, 500, 150, 150)))
+  if ((mMouse == nullptr) && (isCompMouseInPosition(1150, 500, 150, 150)))
   {
     SPosition initialPosition;
     initialPosition.col = 0;
@@ -94,22 +92,22 @@ void CWindow::addMouse()
 
 void CWindow::startStopReset()
 {
-  if (isMouseInPosition(1150, 50, 150, 150))
+  if (isCompMouseInPosition(1150, 50, 150, 150))
   {
     mRun = true;
   }
-  else if (isMouseInPosition(1150, 200, 150, 150))
+  else if (isCompMouseInPosition(1150, 200, 150, 150))
   {
     mRun = false;
   }
-  else if (isMouseInPosition(1150, 350, 150, 150))
+  else if (isCompMouseInPosition(1150, 350, 150, 150))
   {
     mMouse = nullptr;
     mRun = false;
   }
 }
 
-bool CWindow::isMouseInPosition(int positionX, int positionY, int width, int height)
+bool CWindow::isCompMouseInPosition(int positionX, int positionY, int width, int height)
 {
   sf::Vector2i localPosition = sf::Mouse::getPosition(mRenderWindow);
   if((localPosition.x>positionX) && (localPosition.x<positionX+width)

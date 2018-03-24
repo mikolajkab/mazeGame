@@ -11,6 +11,8 @@
 
 using std::make_shared;
 using std::make_unique;
+using std::shared_ptr;
+using std::unique_ptr;
 
 class CWindow
 {
@@ -25,22 +27,22 @@ public:
 
 private:
   sf::RenderWindow mRenderWindow;
-  std::shared_ptr<CMazeMap> mMazeMap;
+  shared_ptr<CMazeMap> mMazeMap;
 
-  std::unique_ptr<CMaze> mMaze;
-  std::unique_ptr<CMouse> mMouse;
+  unique_ptr<CMaze> mMaze;
+  unique_ptr<CMouse> mMouse;
 
-  CButton mStartButton;
-  CButton mStopButton;
-  CButton mResetButton;
-  CButton mWallFollowerButton;
-  CButton mBruteForceButton;
+  unique_ptr<CButton> mStartButton;
+  unique_ptr<CButton> mStopButton;
+  unique_ptr<CButton> mResetButton;
+  unique_ptr<CButton> mWallFollowerButton;
+  unique_ptr<CButton> mBruteForceButton;
 
   bool mRun;
 
   void handleButtons();
   void startStopReset();
   void addMouse();
-  bool isMouseInPosition(int positionX, int positionY, int width, int height);
+  bool isCompMouseInPosition(int positionX, int positionY, int width, int height);
 };
 
