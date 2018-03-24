@@ -1,7 +1,5 @@
 #include "Mouse.h"
 
-const SPosition CMouse::goalPosition = { 3,3 };
-
 CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, int algNum)
   : mActualPosition(position)
   , mStep(nullptr)
@@ -31,7 +29,7 @@ CMouse::~CMouse()
 
 void CMouse::go()
 {
-  if(!atGoal())
+  if(!mStep->atGoal())
   {
     mActualPosition = mStep->go();
     setSpritePosition(0);
@@ -50,18 +48,4 @@ void CMouse::setSpritePosition(float angle)
   mSprite.setPosition(sf::Vector2f(mActualPosition.col*CTile::sWidth,
                                    mActualPosition.row*CTile::sHeight));
   mSprite.setRotation(angle);
-}
-
-bool CMouse::atGoal()
-{
-  if ((mActualPosition.col == goalPosition.col) && (mActualPosition.row == goalPosition.row))
-  {
-    //return true;
-  }
-  return false;
-}
-
-void CMouse::assignStepAlgorithm(int algorithmNumber)
-{
-
 }

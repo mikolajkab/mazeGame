@@ -68,3 +68,12 @@ void CStep::setFirstEntranceDirection(int row, int col, UDirections direction)
     mDetectedMazeMap[row][col].firstEntranceDirection = direction;
   }
 }
+
+bool CStep::atGoal()
+{
+  if ((mActualPosition.col == mActualMazeMap->goalPosition.col) && (mActualPosition.row == mActualMazeMap->goalPosition.row))
+  {
+    return true;
+  }
+  return false;
+}

@@ -4,15 +4,15 @@
 CWindow::CWindow(int width, int height, std::string name)
   : mRenderWindow(sf::VideoMode(width, height), name, sf::Style::Close)
   , mMazeMap(make_shared<CMazeMap>(1))
-  , mMaze(make_unique<CMaze>("tileset2.png", mMazeMap))
+  , mMaze(make_unique<CMaze>("images/tileset2.png", mMazeMap))
   , mRun(false)
 {
-  mButtons.push_back(make_unique<CButton>("start.png", sButPosX, sButStartPosY));
-  mButtons.push_back(make_unique<CButton>("stop.png", sButPosX, sButStopPosY));
-  mButtons.push_back(make_unique<CButton>("reset.png", sButPosX, sButResetPosY));
-  mButtons.push_back(make_unique<CButton>("wallFollower.png", sButPosX, sButWFPosY));
-  mButtons.push_back(make_unique<CButton>("bruteForce.png", sButPosX, sButBFPosY));
-  mButtons.push_back(make_unique<CButton>("zmianaMapy.png", sButPosX, sButSwitchMapY));
+  mButtons.push_back(make_unique<CButton>("images/start.png", sButPosX, sButStartPosY));
+  mButtons.push_back(make_unique<CButton>("images/stop.png", sButPosX, sButStopPosY));
+  mButtons.push_back(make_unique<CButton>("images/reset.png", sButPosX, sButResetPosY));
+  mButtons.push_back(make_unique<CButton>("images/wallFollower.png", sButPosX, sButWFPosY));
+  mButtons.push_back(make_unique<CButton>("images/bruteForce.png", sButPosX, sButBFPosY));
+  mButtons.push_back(make_unique<CButton>("images/zmianaMapy.png", sButPosX, sButSwitchMapY));
 }
 
 CWindow::~CWindow()
@@ -89,14 +89,14 @@ void CWindow::addMouse()
     SPosition initialPosition;
     initialPosition.col = 0;
     initialPosition.row = 0;
-    mMice.push_back(make_unique<CMouse>("mouseWallFollower.png", mMazeMap, initialPosition, CMouse::sAlgNumWallFollower));
+    mMice.push_back(make_unique<CMouse>("images/mouseWallFollower.png", mMazeMap, initialPosition, CMouse::sAlgNumWallFollower));
   }
   else if (isCompMouseInPosition(sButPosX, sButBFPosY, sButSideLen, sButSideLen))
   {
     SPosition initialPosition;
     initialPosition.col = 0;
     initialPosition.row = 0;
-    mMice.push_back(make_unique<CMouse>("mouseBruteForce.png", mMazeMap, initialPosition, CMouse::sAlgNumBruteForce));
+    mMice.push_back(make_unique<CMouse>("images/mouseBruteForce.png", mMazeMap, initialPosition, CMouse::sAlgNumBruteForce));
   }
 }
 
@@ -108,7 +108,7 @@ void CWindow::switchMap()
     mRun = false;
     mMazeMap->switchMap();
     mMaze.reset();
-    mMaze = make_unique<CMaze>("tileset2.png", mMazeMap);
+    mMaze = make_unique<CMaze>("images/tileset2.png", mMazeMap);
   }
 }
 

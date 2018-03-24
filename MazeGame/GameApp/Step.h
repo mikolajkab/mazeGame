@@ -12,6 +12,7 @@ public:
   CStep(SPosition position, std::shared_ptr<CMazeMap> mazeMap);
   ~CStep();
   virtual SPosition go() = 0;
+  bool atGoal();
 
 protected:
   SPosition mActualPosition;

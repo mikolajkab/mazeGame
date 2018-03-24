@@ -13,7 +13,6 @@ public:
   CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, int algNum);
   virtual ~CMouse();
   void go();
-  void assignStepAlgorithm(int algorithmNumber);
 
   static constexpr int sAlgNumWallFollower  = 1;
   static constexpr int sAlgNumBruteForce    = 2;
@@ -23,10 +22,8 @@ private:
   sf::Texture mTexture;
   sf::Sprite mSprite;
   SPosition mActualPosition;
-  static const SPosition goalPosition;
 
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
   void setSpritePosition(float angle);
-  bool atGoal();
 };
 

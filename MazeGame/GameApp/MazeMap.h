@@ -15,8 +15,9 @@ public:
   UDirections getWallPosition(int row, int col);
   void switchMap();
 
-  static constexpr int sWidth = 8;
-  static constexpr int sHeight = 8;
+  static constexpr int sWidth = 16;
+  static constexpr int sHeight = 16;
+  static const SPosition goalPosition;
 
   std::array<std::array<UDirections, sHeight>, sWidth> map;
 

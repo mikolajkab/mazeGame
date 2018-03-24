@@ -3,6 +3,7 @@
 CWallFollower::CWallFollower(SPosition position, std::shared_ptr<CMazeMap> mazeMap)
   :CStep(position, mazeMap)
 {
+  mLastStep.fields.S = 1;
 }
 
 CWallFollower::~CWallFollower()
@@ -11,6 +12,11 @@ CWallFollower::~CWallFollower()
 
 SPosition CWallFollower::go()
 {
+  if (wasVisited())
+  {
+    return mActualPosition;
+  };
+
   setVisited();
   checkWalls();
   switch (mLastStep.value)
@@ -92,4 +98,13 @@ SPosition CWallFollower::go()
     break;
   }
   return mActualPosition;
+}
+
+bool CWallFollower::wasVisited()
+{
+  if (mDetectedMazeMap[mActualPosition.row][mActualPosition.col].visited == true)
+  {
+    return true;
+  }
+  return false;
 }
