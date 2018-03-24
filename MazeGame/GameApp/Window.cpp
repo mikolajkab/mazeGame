@@ -5,7 +5,6 @@ CWindow::CWindow(int width, int height, std::string name)
   : mRenderWindow(sf::VideoMode(width, height), name, sf::Style::Close)
   , mMazeMap(make_shared<CMazeMap>())
   , mMaze(make_unique<CMaze>("tileset2.png", mMazeMap))
-  , mMouse(nullptr)
   , mRun(false)
 {
   mButtons.push_back(make_unique<CButton>("start.png", 1150, 50));
@@ -58,13 +57,13 @@ void CWindow::display()
     mRenderWindow.draw(*mMaze);
   }
 
-  if (mMouse != nullptr)
+  for (const auto& mouse : mMice)
   {
     if (mRun)
     {
-      mMouse->go();
+      mouse->go();
     }
-    mRenderWindow.draw(*mMouse);
+    mRenderWindow.draw(*mouse);
   }
 
   for (const auto& button : mButtons)
@@ -83,12 +82,19 @@ void CWindow::handleButtons()
 
 void CWindow::addMouse()
 {
-  if ((mMouse == nullptr) && (isCompMouseInPosition(1150, 500, 150, 150)))
+  if (isCompMouseInPosition(1150, 500, 150, 150))
   {
     SPosition initialPosition;
     initialPosition.col = 0;
     initialPosition.row = 0;
-    mMouse = make_unique<CMouse>("mouse.png", mMazeMap, initialPosition);
+    mMice.push_back(make_unique<CMouse>("mouseWallFollower.png", mMazeMap, initialPosition, CMouse::sAlgNumWallFollower));
+  }
+  else if (isCompMouseInPosition(1150, 650, 150, 150))
+  {
+    SPosition initialPosition;
+    initialPosition.col = 0;
+    initialPosition.row = 0;
+    mMice.push_back(make_unique<CMouse>("mouseBruteForce.png", mMazeMap, initialPosition, CMouse::sAlgNumBruteForce));
   }
 }
 
@@ -104,7 +110,7 @@ void CWindow::startStopReset()
   }
   else if (isCompMouseInPosition(1150, 350, 150, 150))
   {
-    mMouse = nullptr;
+    mMice.clear();
     mRun = false;
   }
 }

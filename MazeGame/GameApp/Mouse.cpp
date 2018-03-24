@@ -2,17 +2,25 @@
 
 const SPosition CMouse::goalPosition = { 3,3 };
 
-CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position)
+CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, int algNum)
   : mActualPosition(position)
-  , mStep(std::make_unique<CBruteForce>(mActualPosition, mazeMap))
+  , mStep(nullptr)
 {
   if (!mTexture.loadFromFile(fielName))
   {
     // TODO: trigger excecption
   }
 
+  if (algNum == sAlgNumWallFollower)
+  {
+    mStep = std::make_unique<CWallFollower>(mActualPosition, mazeMap);
+  }
+  else if (algNum == sAlgNumBruteForce)
+  {
+    mStep = std::make_unique<CBruteForce>(mActualPosition, mazeMap);
+  }
+
   mSprite.setTexture(mTexture);
-  mSprite.setColor(sf::Color(155, 0, 128));
   mSprite.setOrigin(sf::Vector2f(-7, -7));
   setSpritePosition(0);
 }
@@ -51,4 +59,9 @@ bool CMouse::atGoal()
     //return true;
   }
   return false;
+}
+
+void CMouse::assignStepAlgorithm(int algorithmNumber)
+{
+
 }

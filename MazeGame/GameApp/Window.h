@@ -30,9 +30,9 @@ private:
   shared_ptr<CMazeMap> mMazeMap;
 
   unique_ptr<CMaze> mMaze;
-  unique_ptr<CMouse> mMouse;
 
-  std::vector <unique_ptr<CButton>> mButtons;
+  std::vector<unique_ptr<CMouse>>  mMice;
+  std::vector<unique_ptr<CButton>> mButtons;
 
   bool mRun;
 
