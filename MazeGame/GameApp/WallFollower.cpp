@@ -12,11 +12,6 @@ CWallFollower::~CWallFollower()
 
 SPosition CWallFollower::go()
 {
-  if (wasVisited())
-  {
-    return mActualPosition;
-  };
-
   setVisited();
   checkWalls();
   switch (mLastStep.value)
