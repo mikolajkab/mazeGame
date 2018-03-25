@@ -2,7 +2,7 @@
 
 CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, int algNum)
   : mActualPosition(position)
-  , mStep(nullptr)
+  , mStepper(nullptr)
 {
   if (!mTexture.loadFromFile(fielName))
   {
@@ -11,11 +11,11 @@ CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, S
 
   if (algNum == sAlgNumWallFollower)
   {
-    mStep = std::make_unique<CWallFollower>(mActualPosition, mazeMap);
+    mStepper = std::make_unique<CWallFollower>(mActualPosition, mazeMap);
   }
   else if (algNum == sAlgNumBruteForce)
   {
-    mStep = std::make_unique<CBruteForce>(mActualPosition, mazeMap);
+    mStepper = std::make_unique<CBruteForce>(mActualPosition, mazeMap);
   }
 
   mSprite.setTexture(mTexture);
@@ -29,9 +29,9 @@ CMouse::~CMouse()
 
 void CMouse::go()
 {
-  if(!mStep->atGoal())
+  if(!mStepper->atGoal())
   {
-    mActualPosition = mStep->go();
+    mActualPosition = mStepper->go();
     setSpritePosition(0);
   }
 }

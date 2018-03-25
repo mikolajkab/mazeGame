@@ -1,16 +1,16 @@
-#include "Step.h"
+#include "Stepper.h"
 
-CStep::CStep(SPosition position, std::shared_ptr<CMazeMap> mazeMap)
+CStepper::CStepper(SPosition position, std::shared_ptr<CMazeMap> mazeMap)
   : mActualPosition(position)
   , mActualMazeMap(mazeMap)
 {
 }
 
-CStep::~CStep()
+CStepper::~CStepper()
 {
 }
 
-void CStep::goNorth()
+void CStepper::goNorth()
 {
   mActualPosition.row -= 1;
   mLastStep.value = 0;
@@ -20,7 +20,7 @@ void CStep::goNorth()
   setFirstEntranceDirection(mActualPosition.row, mActualPosition.col, direction);
 }
 
-void CStep::goSouth()
+void CStepper::goSouth()
 {
   mActualPosition.row += 1;
   mLastStep.value = 0;
@@ -30,7 +30,7 @@ void CStep::goSouth()
   setFirstEntranceDirection(mActualPosition.row, mActualPosition.col, direction);
 }
 
-void CStep::goEast()
+void CStepper::goEast()
 {
   mActualPosition.col += 1;
   mLastStep.value = 0;
@@ -40,7 +40,7 @@ void CStep::goEast()
   setFirstEntranceDirection(mActualPosition.row, mActualPosition.col, direction);
 }
 
-void CStep::goWest()
+void CStepper::goWest()
 {
   mActualPosition.col -= 1;
   mLastStep.value = 0;
@@ -50,18 +50,18 @@ void CStep::goWest()
   setFirstEntranceDirection(mActualPosition.row, mActualPosition.col, direction);
 }
 
-void CStep::checkWalls()
+void CStepper::checkWalls()
 {
   mDetectedMazeMap[mActualPosition.row][mActualPosition.col].wallPosition
     = mActualMazeMap->getWallPosition(mActualPosition.row, mActualPosition.col);
 }
 
-void CStep::setVisited()
+void CStepper::setVisited()
 {
   mDetectedMazeMap[mActualPosition.row][mActualPosition.col].visited = true;
 }
 
-void CStep::setFirstEntranceDirection(int row, int col, UDirections direction)
+void CStepper::setFirstEntranceDirection(int row, int col, UDirections direction)
 {
   if (!mDetectedMazeMap[row][col].visited)
   {
@@ -69,11 +69,14 @@ void CStep::setFirstEntranceDirection(int row, int col, UDirections direction)
   }
 }
 
-bool CStep::atGoal()
+bool CStepper::atGoal()
 {
-  if ((mActualPosition.col == mActualMazeMap->goalPosition.col) && (mActualPosition.row == mActualMazeMap->goalPosition.row))
+  for (const auto& position : mActualMazeMap->goalPosition)
   {
-    return true;
+    if ((mActualPosition.col == position.col) && (mActualPosition.row == position.row))
+    {
+      return true;
+    }
   }
   return false;
 }

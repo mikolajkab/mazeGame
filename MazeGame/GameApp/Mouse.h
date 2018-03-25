@@ -18,7 +18,7 @@ public:
   static constexpr int sAlgNumBruteForce    = 2;
 
 private:
-  std::unique_ptr<CStep> mStep;
+  std::unique_ptr<CStepper> mStepper;
   sf::Texture mTexture;
   sf::Sprite mSprite;
   SPosition mActualPosition;

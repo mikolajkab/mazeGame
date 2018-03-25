@@ -17,7 +17,7 @@ public:
 
   static constexpr int sWidth = 16;
   static constexpr int sHeight = 16;
-  static const SPosition goalPosition;
+  static constexpr SPosition goalPosition[]= { { 7,7 },{ 7,8 },{ 8,7 },{ 8,8 } };
 
   std::array<std::array<UDirections, sHeight>, sWidth> map;
 

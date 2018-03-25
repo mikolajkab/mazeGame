@@ -15,12 +15,12 @@ public:
   ~CMaze();
 
 private:
+  sf::VertexArray mVertexArray;
+  sf::Texture mTexture;
+
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
   void setQuadPositions(sf::Vertex* quad, int col, int row);
   void setQuadCoords(sf::Vertex* quad, int col, int row, int tileType);
-
-  sf::VertexArray mVertexArray;
-  sf::Texture mTexture;
 
   static constexpr int sNumVerticesInQuad = 4;
 };

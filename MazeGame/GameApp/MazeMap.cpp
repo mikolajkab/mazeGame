@@ -1,7 +1,5 @@
 #include "MazeMap.h"
 
-const SPosition CMazeMap::goalPosition = { 7,7 };
-
 CMazeMap::CMazeMap(int mapNum)
   : mMapNum(mapNum)
 {

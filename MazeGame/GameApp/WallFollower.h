@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Step.h"
+#include "Stepper.h"
 
-class CWallFollower : public CStep
+class CWallFollower : public CStepper
 {
 public:
   CWallFollower(SPosition position, std::shared_ptr<CMazeMap> mazeMap);

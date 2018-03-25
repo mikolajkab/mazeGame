@@ -1,5 +1,7 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
+
 #include "WallPosition.h"
 
 class CButton : public sf::Drawable, public sf::Transformable

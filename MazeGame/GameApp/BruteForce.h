@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Step.h"
+#include "Stepper.h"
 
-class CBruteForce : public CStep
+class CBruteForce : public CStepper
 {
 public:
   CBruteForce(SPosition position, std::shared_ptr<CMazeMap> mazeMap);

@@ -1,7 +1,7 @@
 #include "WallFollower.h"
 
 CWallFollower::CWallFollower(SPosition position, std::shared_ptr<CMazeMap> mazeMap)
-  :CStep(position, mazeMap)
+  :CStepper(position, mazeMap)
 {
   mLastStep.fields.S = 1;
 }

@@ -6,11 +6,11 @@
 #include "WallPosition.h"
 #include "MazeMap.h"
 
-class CStep
+class CStepper
 {
 public:
-  CStep(SPosition position, std::shared_ptr<CMazeMap> mazeMap);
-  ~CStep();
+  CStepper(SPosition position, std::shared_ptr<CMazeMap> mazeMap);
+  ~CStepper();
   virtual SPosition go() = 0;
   bool atGoal();
 

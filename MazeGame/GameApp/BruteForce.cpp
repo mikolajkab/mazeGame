@@ -2,7 +2,7 @@
 #include <vector>
 
 CBruteForce::CBruteForce(SPosition position, std::shared_ptr<CMazeMap> mazeMap)
-  :CStep(position, mazeMap)
+  :CStepper(position, mazeMap)
 {
 }
 
