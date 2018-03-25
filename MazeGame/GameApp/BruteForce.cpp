@@ -1,4 +1,5 @@
 #include "BruteForce.h"
+
 #include <vector>
 
 CBruteForce::CBruteForce(SPosition position, std::shared_ptr<CMazeMap> mazeMap)

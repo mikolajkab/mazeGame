@@ -1,6 +1,9 @@
 #include "Window.h"
 #include "MazeMap.h"
 
+using std::make_unique;
+using std::make_shared;
+
 CWindow::CWindow(int width, int height, std::string name)
   : mRenderWindow(sf::VideoMode(width, height), name, sf::Style::Close)
   , mMazeMap(make_shared<CMazeMap>(1))

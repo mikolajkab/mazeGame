@@ -94,12 +94,3 @@ SPosition CWallFollower::go()
   }
   return mActualPosition;
 }
-
-bool CWallFollower::wasVisited()
-{
-  if (mDetectedMazeMap[mActualPosition.row][mActualPosition.col].visited == true)
-  {
-    return true;
-  }
-  return false;
-}

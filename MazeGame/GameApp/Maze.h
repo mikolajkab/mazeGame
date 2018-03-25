@@ -6,8 +6,6 @@
 #include "Tile.h"
 #include "MazeMap.h"
 
-using std::array;
-
 class CMaze : public sf::Drawable, public sf::Transformable
 {
 public:

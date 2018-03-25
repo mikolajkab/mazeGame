@@ -1,7 +1,5 @@
 #include "Button.h"
 
-
-
 CButton::CButton(const std::string& fielName, int positionX, int positionY, int colorR, int colorG, int colorB)
 {
   if (!mTexture.loadFromFile(fielName))

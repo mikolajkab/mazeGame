@@ -9,11 +9,6 @@
 #include "Button.h"
 #include "WallPosition.h"
 
-using std::make_shared;
-using std::make_unique;
-using std::shared_ptr;
-using std::unique_ptr;
-
 class CWindow
 {
 public:
@@ -27,11 +22,11 @@ public:
 
 private:
   sf::RenderWindow mRenderWindow;
-  shared_ptr<CMazeMap> mMazeMap;
-  unique_ptr<CMaze> mMaze;
+  std::shared_ptr<CMazeMap> mMazeMap;
+  std::unique_ptr<CMaze> mMaze;
 
-  std::vector<unique_ptr<CMouse>>  mMice;
-  std::vector<unique_ptr<CButton>> mButtons;
+  std::vector<std::unique_ptr<CMouse>>  mMice;
+  std::vector<std::unique_ptr<CButton>> mButtons;
 
   bool mRun;
 

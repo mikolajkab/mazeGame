@@ -1,18 +1,17 @@
 #pragma once
-#include <cstdint>
 
-using std::uint8_t;
+#include <cstdint>
 
 union UDirections
 {
-  uint8_t value;
+  std::uint8_t value;
   struct SFields
   {
-    uint8_t N	: 1;
-    uint8_t S	: 1;
-    uint8_t E	: 1;
-    uint8_t W	: 1;
-    uint8_t res : 4;
+    std::uint8_t N	: 1;
+    std::uint8_t S	: 1;
+    std::uint8_t E	: 1;
+    std::uint8_t W	: 1;
+    std::uint8_t res : 4;
   } fields;
 };
 
