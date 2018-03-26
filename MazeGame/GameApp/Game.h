@@ -1,3 +1,6 @@
+///
+/// Klasa reprezentujaca gre
+///
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -7,16 +10,16 @@
 class CGame
 {
 public:
-  CGame();
-  virtual ~CGame();
-  void runMainLoop();
+  CGame();            ///< konstruktor
+  virtual ~CGame();   ///< destruktor
+  void runMainLoop(); ///< funkcja sterujaca gra
 
 private:
-  CWindow mWindow;
-  sf::Clock mClock;
-  sf::Time time;
+  CWindow mWindow;    ///< okno dialogowe w ktorym wyswietla sie gra
+  sf::Clock mClock;   ///< zegar odmierza czas,z biblioteki SFML
+  sf::Time time;      ///< reprezentuje czas, biblioteki SFML
 
-  static const int mWindowHeight = 1024;
-  static const int mWindowWidth = 1424;
+  static const int mWindowHeight = 1024;  ///< wysokosc okna dialogowego
+  static const int mWindowWidth = 1424;   ///< szerokosc okna dialogowego
 };
 

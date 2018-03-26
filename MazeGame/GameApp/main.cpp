@@ -1,10 +1,15 @@
+/*!
+  funkcja main() calego programu
+*/
+
+
 #include "Game.h"
 
-int main()
+int main()            /// funkcja main()
 {
-  srand(time(NULL));
-  CGame game;
-  game.runMainLoop();
+  srand(time(NULL));  /// powoduje losowa generacje liczne przez rand()
+  CGame game;         /// < deklaracja klasy reprezentujacej gre
+  game.runMainLoop(); /// wywolanie glownej funkcji klasy main
 
   return 0;
 }
