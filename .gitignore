@@ -10,3 +10,4 @@ MazeGame.VC.opendb
 /MazeGame/x64
 /MazeGame/Debug
 Release
+/MazeGame/Release/*.exe
