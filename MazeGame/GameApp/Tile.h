@@ -1,19 +1,23 @@
+///
+/// Klasa reprezentujaca kafelke w labiryncie
+///
+
 #pragma once
 
-#include "WallPosition.h"
+#include "Utilities.h"
 
 class CTile
 {
 public:
-  CTile();
-  ~CTile();
-  UDirections getWall(void);
-  void setWall(UDirections);
+  CTile();                            ///< konstruktor
+  ~CTile();                           ///< destruktor
+  UDirections getWall(void);          ///< zrwaca polezenie scian w kafelce
+  void setWall(UDirections);          ///< ustawia polozenie scian w kafelce
 
-  static constexpr int sWidth = 64;
-  static constexpr int sHeight = 64;
+  static constexpr int sWidth = 64;   ///< szerokosc kafelki w pixelach
+  static constexpr int sHeight = 64;  ///< wysokosc kafelki w pixelach
 
 private:
-  UDirections mWall;
+  UDirections mWall;                  ///< okresla polozenie scian w kafelce
 };
 

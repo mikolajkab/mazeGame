@@ -11,7 +11,7 @@
 #include "Mouse.h"
 #include "MazeMap.h"
 #include "Button.h"
-#include "WallPosition.h"
+#include "Utilities.h"
 
 class CWindow
 {
@@ -19,7 +19,7 @@ public:
   CWindow(int length, int width, std::string name); ///< konstruktor
   ~CWindow();                                       ///< destruktor
 
-  void pollEvents();    ///< monitoruje wystapienie wydarzen takich jak klikniecie myszka, zamkniete okna itp
+  void pollEvents();    ///< monitoruje wystapienie wydarzen takich jak klikniecie myszka, zamkniecie okna itp
   bool isOpen() const;  ///< zwraca true jezeli okno gry jest otwarte
   void display();       ///< wyswietla szystkie elementy gry
   void clear();         ///< usuwa wszystkie elementy gry

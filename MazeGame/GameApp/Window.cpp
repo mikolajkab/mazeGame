@@ -92,14 +92,14 @@ void CWindow::addMouse()
     SPosition initialPosition;
     initialPosition.col = 0;
     initialPosition.row = 0;
-    mMice.push_back(make_unique<CMouse>("images/mouseWallFollower.png", mMazeMap, initialPosition, CMouse::sAlgNumWallFollower));
+    mMice.push_back(make_unique<CMouse>("images/mouseWallFollower.png", mMazeMap, initialPosition, EAlgorithm::eWallFollower));
   }
   else if (isCompMouseInPosition(sButPosX, sButBFPosY, sButSideLen, sButSideLen))
   {
     SPosition initialPosition;
     initialPosition.col = 0;
     initialPosition.row = 0;
-    mMice.push_back(make_unique<CMouse>("images/mouseBruteForce.png", mMazeMap, initialPosition, CMouse::sAlgNumBruteForce));
+    mMice.push_back(make_unique<CMouse>("images/mouseBruteForce.png", mMazeMap, initialPosition, EAlgorithm::eBruteForce));
   }
 }
 

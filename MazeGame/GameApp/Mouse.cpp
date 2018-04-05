@@ -1,6 +1,6 @@
 #include "Mouse.h"
 
-CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, int algNum)
+CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, EAlgorithm algNum)
   : mActualPosition(position)
   , mStepper(nullptr)
 {
@@ -9,11 +9,11 @@ CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, S
     // TODO: trigger excecption
   }
 
-  if (algNum == sAlgNumWallFollower)
+  if (algNum == EAlgorithm::eWallFollower)
   {
     mStepper = std::make_unique<CWallFollower>(mActualPosition, mazeMap);
   }
-  else if (algNum == sAlgNumBruteForce)
+  else if (algNum == EAlgorithm::eBruteForce)
   {
     mStepper = std::make_unique<CBruteForce>(mActualPosition, mazeMap);
   }

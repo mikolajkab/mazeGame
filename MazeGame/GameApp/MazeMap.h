@@ -1,27 +1,31 @@
+///
+/// Klasa reprezentujaca mape labiryntu
+///
+
 #pragma once
 
 #include <array>
 
-#include "WallPosition.h"
+#include "Utilities.h"
 
 class CMazeMap
 {
 public:
-  CMazeMap(int mapNum);
-  virtual ~CMazeMap();
+  CMazeMap(int mapNum);                           ///< konstruktor
+  virtual ~CMazeMap();                            ///< destruktor
 
-  size_t getWidth();
-  size_t getHeight();
-  UDirections getWallPosition(int row, int col);
-  void switchMap();
+  size_t getWidth();                              ///< zwraca szerokosc labiryntu (w ilosci pol)
+  size_t getHeight();                             ///< zwraca wysokosc labiryntu (w ilosci pol)
+  UDirections getWallPosition(int row, int col);  ///< zwraca pozycje scian w kafelce
+  void switchMap();                               ///< zmienia mape labiryntu
 
-  static constexpr int sWidth = 16;
-  static constexpr int sHeight = 16;
-  static constexpr SPosition goalPosition[]= { { 7,7 },{ 7,8 },{ 8,7 },{ 8,8 } };
+  static constexpr int sWidth = 16;               ///< szerokosc labiryntu (w ilosci pol)
+  static constexpr int sHeight = 16;              ///< wysokoksc labiryntu (w ilosci pol)
+  static constexpr SPosition goalPosition[]= { { 7,7 },{ 7,8 },{ 8,7 },{ 8,8 } }; ///< pozycjca celu w labiryncie
 
-  std::array<std::array<UDirections, sHeight>, sWidth> map;
+  std::array<std::array<UDirections, sHeight>, sWidth> map; ///< macierz opisujaca pozycje scian w labiryncie
 
 private:
-  int mMapNum;
+  int mMapNum;                                    ///< numer mapy
 };
 

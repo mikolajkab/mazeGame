@@ -1,3 +1,8 @@
+///
+/// klasa reprezentujaca mysz
+/// dziedziczy Drawable i Transformable z biblioteki SFML
+///
+
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -10,20 +15,17 @@
 class CMouse : public sf::Drawable, public sf::Transformable
 {
 public:
-  CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, int algNum);
-  virtual ~CMouse();
-  void go();
-
-  static constexpr int sAlgNumWallFollower  = 1;
-  static constexpr int sAlgNumBruteForce    = 2;
+  CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, EAlgorithm algNum);  ///< konstruktor
+  virtual ~CMouse();                                                                                              ///< destruktor
+  void go();                                                                                                      ///< wykonuje jeden krok
 
 private:
-  std::unique_ptr<CStepper> mStepper;
-  sf::Texture mTexture;
-  sf::Sprite mSprite;
-  SPosition mActualPosition;
+  std::unique_ptr<CStepper> mStepper; ///< wskaznik do klasy reprzentujacej krok
+  sf::Texture mTexture;               ///< obraz (tekstura) myszy
+  sf::Sprite mSprite;                 ///< obiekt grficzny myszy
+  SPosition mActualPosition;          ///< pozycja myszy
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-  void setSpritePosition(float angle);
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; ///< funkcja rysujaca mysz
+  void setSpritePosition(float angle);                                        ///< funkcja ustawiajaca kat polozenia myszy
 };
 

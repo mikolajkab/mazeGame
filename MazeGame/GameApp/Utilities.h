@@ -1,7 +1,11 @@
+///
+/// plik definiujacy struktury pomocnicze
+///
 #pragma once
 
 #include <cstdint>
 
+/// unia przechowuje polozenie scian w kafelce
 union UDirections
 {
   std::uint8_t value;
@@ -15,8 +19,16 @@ union UDirections
   } fields;
 };
 
+/// struktura przechowuje poolozenie kafelki
 struct SPosition
 {
   int row;
   int col;
+};
+
+/// enumeracja okresla rodzaj algorytmu oblicz
+enum class EAlgorithm
+{
+  eWallFollower,
+  eBruteForce,
 };

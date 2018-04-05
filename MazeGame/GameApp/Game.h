@@ -1,6 +1,7 @@
 ///
 /// Klasa reprezentujaca gre
 ///
+
 #pragma once
 
 #include <SFML/Graphics.hpp>

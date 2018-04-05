@@ -2,10 +2,7 @@
 
 CButton::CButton(const std::string& fielName, int positionX, int positionY, int colorR, int colorG, int colorB)
 {
-  if (!mTexture.loadFromFile(fielName))
-  {
-    // TODO: trigger excecption
-  }
+  mTexture.loadFromFile(fielName);
 
   mSprite.setTexture(mTexture);
   mSprite.setColor(sf::Color(colorR, colorG, colorB));

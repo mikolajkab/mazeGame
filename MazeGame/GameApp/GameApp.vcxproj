@@ -138,7 +138,7 @@
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Stepper.h" />
     <ClInclude Include="WallFollower.h" />
-    <ClInclude Include="WallPosition.h" />
+    <ClInclude Include="Utilities.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Window.h" />
