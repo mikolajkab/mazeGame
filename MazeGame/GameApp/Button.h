@@ -1,13 +1,10 @@
 ///
 /// funkcja reprezentuje przycisk
-/// dziedziczy Drawable i Transformable z biblioteki SFML
+/// dziedziczy CImage
 ///
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
-
-#include "Utilities.h"
 #include "Image.h"
 
 class CButton : public CImage

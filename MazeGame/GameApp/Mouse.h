@@ -1,18 +1,17 @@
 ///
 /// klasa reprezentujaca mysz
-/// dziedziczy Drawable i Transformable z biblioteki SFML
+/// dziedziczy CImage
 ///
 
 #pragma once
-
-#include <SFML/Graphics.hpp>
 
 #include "Tile.h"
 #include "MazeMap.h"
 #include "WallFollower.h"
 #include "BruteForce.h"
+#include "Image.h"
 
-class CMouse : public sf::Drawable, public sf::Transformable
+class CMouse : public CImage
 {
 public:
   CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, EAlgorithm algNum);  ///< konstruktor
@@ -20,12 +19,9 @@ public:
   void go();                                                                                                      ///< wykonuje jeden krok
 
 private:
-  std::unique_ptr<CStepper> mStepper; ///< wskaznik do klasy reprzentujacej krok
-  sf::Texture mTexture;               ///< obraz (tekstura) myszy
-  sf::Sprite mSprite;                 ///< obiekt grficzny myszy
-  SPosition mActualPosition;          ///< pozycja myszy
+  std::unique_ptr<CStepper> mStepper;   ///< wskaznik do klasy reprzentujacej krok
+  SPosition mActualPosition;            ///< pozycja myszy
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; ///< rysuj mysz
-  void setSpritePosition(float angle);                                        ///< ustawiaj kat polozenia myszy
+  void setSpritePosition(float angle);  ///< ustawiaj kat polozenia myszy
 };
 

@@ -1,10 +1,10 @@
 #include "Mouse.h"
 
 CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, SPosition position, EAlgorithm algNum)
-  : mActualPosition(position)
+  : CImage(fielName)
+  , mActualPosition(position)
   , mStepper(nullptr)
 {
-  mTexture.loadFromFile(fielName);
 
   if (algNum == EAlgorithm::eWallFollower)
   {
@@ -15,7 +15,6 @@ CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, S
     mStepper = std::make_unique<CBruteForce>(mActualPosition, mazeMap);
   }
 
-  mSprite.setTexture(mTexture);
   mSprite.setOrigin(sf::Vector2f(-7, -7));
   setSpritePosition(0);
 }
@@ -31,13 +30,6 @@ void CMouse::go()
     mActualPosition = mStepper->go();
     setSpritePosition(0);
   }
-}
-
-void CMouse::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
-  states.transform *= getTransform();
-  states.texture = &mTexture;
-  target.draw(mSprite, states);
 }
 
 void CMouse::setSpritePosition(float angle)

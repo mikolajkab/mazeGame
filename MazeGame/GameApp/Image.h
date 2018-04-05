@@ -1,3 +1,7 @@
+///
+/// klasa reprezentuje obraz, jest klasa bazowa dla CButton i CMouse
+/// dziedziczy Drawable i Transformable z biblioteki SFML
+///
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -6,8 +10,8 @@
 class CImage : public sf::Drawable, public sf::Transformable
 {
 public:
-  CImage(const std::string& fielName);
-  ~CImage();
+  CImage(const std::string& fielName); ///< konstruktor
+  ~CImage();                           ///< destruktor
 
 protected:
   sf::Texture mTexture;     ///< obraz (tekstura) przycisku
