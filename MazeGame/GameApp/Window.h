@@ -32,14 +32,14 @@ private:
   std::vector<std::unique_ptr<CMouse>>  mMice;    ///< wskaznik do klasy reprezentujacej mysz
   std::vector<std::unique_ptr<CButton>> mButtons; ///< wskaznik do klasy reprezentujacej przycisk
 
-  bool mRun;  ///< reprezentuje stan run lub stop
+  bool mRun;              ///< reprezentuje stan run lub stop
 
   void handleButtons();   ///< wywoluje odpowiednie funkcje w reakcji na klikniecie przyciskow
   void startStopReset();  ///< rozpoczyna, zatrzymuje lub restartuje program
   void addMouse();        ///< dodaje mysz na planszy
   void switchMap();       ///< zmiania plansze z labiryntem
 
-  bool isCompMouseInPosition(int positionX, int positionY, int width, int height);  ///< zwrata true jesli mysz komputerowa jest podanym obszarze
+  bool isCompMouseInPosition(int positionX, int positionY, int width, int height);  ///< zwraca true jesli mysz komputerowa jest podanym obszarze
 
   static constexpr int sButPosX       = 1150;   ///< szerokosc przycisku
   static constexpr int sButStartPosY  = 50;     ///< polozenie Y przycisku Start

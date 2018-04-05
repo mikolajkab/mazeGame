@@ -4,10 +4,7 @@ CMouse::CMouse(const std::string& fielName, std::shared_ptr<CMazeMap> mazeMap, S
   : mActualPosition(position)
   , mStepper(nullptr)
 {
-  if (!mTexture.loadFromFile(fielName))
-  {
-    // TODO: trigger excecption
-  }
+  mTexture.loadFromFile(fielName);
 
   if (algNum == EAlgorithm::eWallFollower)
   {

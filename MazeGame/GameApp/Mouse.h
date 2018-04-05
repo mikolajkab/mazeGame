@@ -25,7 +25,7 @@ private:
   sf::Sprite mSprite;                 ///< obiekt grficzny myszy
   SPosition mActualPosition;          ///< pozycja myszy
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; ///< funkcja rysujaca mysz
-  void setSpritePosition(float angle);                                        ///< funkcja ustawiajaca kat polozenia myszy
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; ///< rysuj mysz
+  void setSpritePosition(float angle);                                        ///< ustawiaj kat polozenia myszy
 };
 

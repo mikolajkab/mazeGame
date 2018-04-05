@@ -19,6 +19,6 @@ private:
   sf::Texture mTexture;     ///< obraz (tekstura) przycisku
   sf::Sprite mSprite;       ///< obiekt graficzny przycisku
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; // funkcja rysuje przycisk
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; // rysuj przycisk
 };
 

@@ -32,3 +32,15 @@ enum class EAlgorithm
   eWallFollower,
   eBruteForce,
 };
+
+/// szablon mnozenia
+template<typename T> T multiply(T a, T b, T c = 1, T d = 1)
+{
+  return a*b*c*d;
+}
+
+/// szablon dodawania
+template<typename T> T add(T a, T b = 0, T c = 0, T d = 0)
+{
+  return a + b + c;
+}

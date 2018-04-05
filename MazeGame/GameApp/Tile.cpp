@@ -4,7 +4,6 @@ CTile::CTile()
 {
 }
 
-
 CTile::~CTile()
 {
 }

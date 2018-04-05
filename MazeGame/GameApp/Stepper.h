@@ -15,7 +15,7 @@ public:
   CStepper(SPosition position, std::shared_ptr<CMazeMap> mazeMap);  ///< konstruktor
   ~CStepper();                                                      ///< destruktor
   virtual SPosition go() = 0;                                       ///< funkcja wirtualna wykonujaca krok
-  bool atGoal();                                                    ///< funkcja sprawdza czy mysz dotarla do celu
+  bool atGoal();                                                    ///< sprawdz czy mysz dotarla do celu
 
 protected:
   SPosition mActualPosition;                ///< aktualna pozycja myszy
@@ -35,12 +35,12 @@ protected:
 
   std::array<std::array<STileInfo, CMazeMap::sWidth>, CMazeMap::sHeight> mDetectedMazeMap; ///< mapa labiryntu rozpoznana przez mysz
 
-  void goNorth();     ///< funkcja idz na polnoc
-  void goSouth();     ///< funkcja idz na poludnie
-  void goEast();      ///< funkcja idz na wschod
-  void goWest();      ///< funkcja idz na zachod
-  void checkWalls();  ///< funkcja sprawdz pozycje scian
-  void setVisited();  ///< funkcja zapamietaj ze plytka byla odwiedzana
-  void setFirstEntranceDirection(int row, int col, UDirections direction); ///< funkcja zapamietaj kierunek pierwszego wejscia
+  void goNorth();     ///< idz na polnoc
+  void goSouth();     ///< idz na poludnie
+  void goEast();      ///< idz na wschod
+  void goWest();      ///< idz na zachod
+  void checkWalls();  ///< sprawdz pozycje scian
+  void setVisited();  ///< zapamietaj ze plytka byla odwiedzana
+  void setFirstEntranceDirection(int row, int col, UDirections direction); ///< zapamietaj kierunek pierwszego wejscia
 };
 

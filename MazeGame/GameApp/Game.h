@@ -13,7 +13,7 @@ class CGame
 public:
   CGame();            ///< konstruktor
   virtual ~CGame();   ///< destruktor
-  void runMainLoop(); ///< funkcja sterujaca gra
+  void runMainLoop(); ///< sterujaca gra
 
 private:
   CWindow mWindow;    ///< okno dialogowe w ktorym wyswietla sie gra

@@ -142,4 +142,3 @@ bool CWindow::isCompMouseInPosition(int positionX, int positionY, int width, int
   }
   return false;
 }
-
